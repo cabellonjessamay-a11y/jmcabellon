@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("timee.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .homepage {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px 130px;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 850px;
+            padding: 50px 40px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .content h1 span {
+            color: #00d9ff;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .welcome {
+            font-size: 20px;
+            font-weight: bold;
+            color: #00e5ff;
+            margin-bottom: 15px;
+        }
+
+        .explore {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .explore-card {
+            padding: 25px 15px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .explore-card:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 217, 255, 0.15);
+        }
+
+        .explore-card h2 {
+            color: #00d9ff;
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .explore-card p {
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .explore-card a {
+            display: inline-block;
+            padding: 10px 16px;
+            background: #00d9ff;
+            color: black;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .explore-card a:hover {
+            background: white;
+            transform: translateY(-2px);
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 850px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: transparent;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .bottom-nav a:hover,
+        .bottom-nav a.active {
+            background: #00d9ff;
+            color: black;
+        }
+
+        @media (max-width: 600px) {
+            .homepage {
+                padding: 25px 12px 150px;
+            }
+
+            .content {
+                padding: 35px 20px;
+            }
+
+            .content h1 {
+                font-size: 34px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+
+            .welcome {
+                font-size: 17px;
+            }
+
+            .explore {
+                grid-template-columns: 1fr;
+            }
+
+            .bottom-nav {
+                bottom: 10px;
+                width: 96%;
+                padding: 8px 5px;
+                gap: 3px;
+                border-radius: 18px;
+            }
+
+            .bottom-nav a {
+                padding: 10px 7px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="homepage">
+        <div class="content">
+
+            <p class="welcome">WELCOME TO OUR WEBSITE</p>
+
+            <h1>Explore Our <span>World</span></h1>
+
+            <p>
+                Welcome to our website! We are glad to have you here.
+                Discover our products, learn more about us, and explore
+                our film viewing section. Enjoy browsing and feel free
+                to contact us if you have any questions or suggestions.
+            </p>
+
+            <div class="explore">
+
+                <div class="explore-card">
+                    <h2>About Us</h2>
+                    <p>
+                        Get to know our website, our mission,
+                        and what we aim to offer our visitors.
+                    </p>
+                    <a href="about.html">Learn More</a>
+                </div>
+
+                <div class="explore-card">
+                    <h2>Our Products</h2>
+                    <p>
+                        Browse our product page and discover
+                        the items featured on our website.
+                    </p>
+                    <a href="product.html">View Products</a>
+                </div>
+
+                <div class="explore-card">
+                    <h2>Film Viewing</h2>
+                    <p>
+                        Visit our film viewing page and explore
+                        our movie-related content.
+                    </p> 
+                    <a href="filmviewing.html">Explore Films</a>
+                </div>
+
+            </div>
+
+            <p style="margin-top: 30px; margin-bottom: 0;">
+                Have questions?
+                <a href="contact.html"
+                   style="color: #00e5ff; text-decoration: none; font-weight: bold;">
+                    Contact Us
+                </a>
+            </p>
+
+        </div>
+    </section>
+
+    <nav class="bottom-nav">
+        <a href="homepage.html" class="active">HOMEPAGE</a>
+        <a href="about.html">ABOUT</a>
+        <a href="product.html">PRODUCT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="filmviewing.html">FILM VIEWING</a>
+        <a href="loginform.html" class="logout">LOGOUT</a>
+    </nav>
+
+</body>
+</html>
+
+
+

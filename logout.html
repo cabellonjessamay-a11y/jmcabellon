@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: url("timee.jpg") center/cover no-repeat fixed;
+            color: white;
+        }
+
+        .logout-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 40px 30px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .logout-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        h1 span {
+            color: #00d9ff;
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            color: #eeeeee;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 13px 22px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .logout-btn {
+            background: #00d9ff;
+            color: black;
+        }
+
+        .logout-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+
+        .cancel-btn {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cancel-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 400px) {
+            .logout-container {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 27px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .buttons a {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="content">
+        <h1>Welcome to My Website!</h1>
+        <p>You are now on the homepage.</p>
+        <p>Explore our products and services.</p>
+    </main>
+
+   <nav class="bottom-nav">
+        <a href="homepage.html">HOMEPAGE</a>
+        <a href="about.html">ABOUT</a>
+        <a href="product.html">PRODUCT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="film viewing.html">FILM VIEWING</a>
+        <a href="loginform.html">LOGOUT</a>
+    </nav>
+
+
+    <script>
+        function logout() {
+            const confirmLogout = confirm(
+                "Are you sure you want to log out?"
+            );
+
+            if (confirmLogout) {
+                window.location.replace("login.html");
+            }
+        }
+    </script>
+
+</body>
+</html>

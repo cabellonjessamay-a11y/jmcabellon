@@ -1,0 +1,272 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("timee.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .about {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px 130px;
+        }
+
+        .content {
+            width: 100%;
+            max-width: 850px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 25px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .content h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            font-size: 25px;
+            color: #00d9ff;
+            margin: 25px 0 12px;
+        }
+
+        .content p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            color: #00e5ff;
+            font-weight: bold;
+        }
+
+        .about-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .card {
+            padding: 22px 15px;
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 217, 255, 0.15);
+        }
+
+        .card h3 {
+            color: #00d9ff;
+            font-size: 19px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 850px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 12px;
+            background: transparent;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .bottom-nav a:hover,
+        .bottom-nav a.active {
+            background: #00d9ff;
+            color: black;
+        }
+
+        @media (max-width: 600px) {
+            .about {
+                padding: 25px 12px 150px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .content h1 {
+                font-size: 32px;
+            }
+
+            .content h2 {
+                font-size: 21px;
+            }
+
+            .content p {
+                font-size: 14px;
+            }
+
+            .about-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .bottom-nav {
+                bottom: 10px;
+                width: 96%;
+                padding: 8px 5px;
+                gap: 3px;
+                border-radius: 18px;
+            }
+
+            .bottom-nav a {
+                padding: 10px 7px;
+                font-size: 11px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="about">
+        <div class="content">
+
+            <h1>About Us</h1>
+
+            <p>
+                Welcome to our website! We are happy to have you here.
+                Our goal is to provide a simple, enjoyable, and
+                user-friendly online experience for everyone.
+            </p>
+
+            <h2>Who We Are</h2>
+
+            <p>
+                We are a team of creative and passionate individuals
+                who enjoy sharing ideas, exploring new experiences,
+                and developing a website that visitors can easily use.
+                We believe that creativity, teamwork, and dedication
+                are important in everything we do.
+            </p>
+
+            <h2>Our Mission</h2>
+
+            <p>
+                Our mission is to create an informative and engaging
+                website where visitors can explore our content,
+                discover our products, and enjoy our film viewing section.
+                We aim to make every visit easy, useful, and enjoyable.
+            </p>
+
+            <h2>What We Offer</h2>
+
+            <div class="about-cards">
+
+                <div class="card">
+                    <h3>Our Products</h3>
+                    <p>
+                        Explore our product section and discover
+                        the items featured on our website.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Film Viewing</h3>
+                    <p>
+                        Visit our film viewing section and enjoy
+                        exploring movie-related content.
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Contact Us</h3>
+                    <p>
+                        Have questions or suggestions?
+                        Visit our contact page to get in touch.
+                    </p>
+                </div>
+
+            </div>
+
+            <h2>Our Vision</h2>
+
+            <p>
+                Our vision is to continue improving our website
+                by combining creativity, quality content, and
+                a welcoming experience for all our visitors.
+                Your support inspires us to do better.
+            </p>
+
+            <p class="highlight">
+                Thank you for visiting our website!
+            </p>
+
+        </div>
+    </section>
+
+    <nav class="bottom-nav">
+        <a href="homepage.html">HOMEPAGE</a>
+        <a href="about.html" class="active">ABOUT</a>
+        <a href="product.html">PRODUCT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="filmviewing.html">FILM VIEWING</a>
+       <a href="loginform.html" class="logout">LOGOUT</a>
+    </nav>
+
+</body>
+</html>
+

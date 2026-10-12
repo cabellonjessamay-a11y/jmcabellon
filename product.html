@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: url("timee.jpg") center / cover fixed no-repeat;
+            color: white;
+        }
+
+        .products {
+            min-height: 100vh;
+            padding: 45px 25px 140px;
+            text-align: center;
+        }
+
+        .products h1 {
+            font-size: 45px;
+            margin-bottom: 12px;
+            text-shadow: 0 3px 10px black;
+        }
+
+        .intro {
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .product-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .product-card {
+            padding: 15px;
+            background: rgba(255,255,255,0.13);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 20px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255,255,255,0.22);
+        }
+
+        .product-card img {
+            display: block;
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 14px;
+            background: #eee;
+        }
+
+        .product-card h2 {
+            font-size: 19px;
+            margin: 15px 0 8px;
+        }
+
+        .description {
+            min-height: 42px;
+            font-size: 13px;
+            line-height: 1.6;
+            color: #f0f0f0;
+        }
+
+        .price {
+            margin: 12px 0;
+            color: #00e5ff;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .product-card button {
+            width: 100%;
+            padding: 12px;
+            background: #00d9ff;
+            border: none;
+            border-radius: 10px;
+            color: black;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .product-card button:hover {
+            background: white;
+        }
+
+        .cart {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            z-index: 1001;
+            padding: 12px 18px;
+            background: #00d9ff;
+            color: black;
+            border-radius: 12px;
+            font-weight: bold;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 95%;
+            max-width: 850px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            padding: 12px;
+            background: rgba(0,0,0,0.8);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 20px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+            z-index: 1000;
+        }
+
+        .bottom-nav a {
+            text-decoration: none;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .bottom-nav a:hover,
+        .bottom-nav a.active {
+            background: #00d9ff;
+            color: black;
+        }
+
+        @media (max-width: 900px) {
+            .product-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            .products {
+                padding: 65px 12px 155px;
+            }
+
+            .products h1 {
+                font-size: 32px;
+            }
+
+            .product-grid {
+                gap: 12px;
+            }
+
+            .product-card {
+                padding: 10px;
+            }
+
+            .product-card img {
+                height: 145px;
+            }
+
+            .product-card h2 {
+                font-size: 16px;
+            }
+
+            .description {
+                font-size: 12px;
+            }
+
+            .price {
+                font-size: 18px;
+            }
+
+            .bottom-nav {
+                bottom: 8px;
+                width: 98%;
+                padding: 7px 4px;
+                gap: 2px;
+            }
+
+            .bottom-nav a {
+                padding: 9px 6px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cart">
+        ?? Cart: <span id="cartCount">0</span>
+    </div>
+
+    <section class="products">
+        <h1>Our Products</h1>
+
+        <p class="intro">
+            Discover our collection of amazing products.
+            Choose your favorites and add them to your cart!
+        </p>
+
+        <div class="product-grid">
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500&auto=format&fit=crop" alt="Classic Watch" loading="lazy">
+                <h2>Classic Watch</h2>
+                <p class="description">Stylish watch for everyday use.</p>
+                <p class="price">850</p>
+                <button onclick="addToCart('Classic Watch',850)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop" alt="Wireless Headphones" loading="lazy">
+                <h2>Wireless Headphones</h2>
+                <p class="description">Enjoy your favorite music with clear sound.</p>
+                <p class="price">1,250</p>
+                <button onclick="addToCart('Wireless Headphones',1250)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&auto=format&fit=crop" alt="Backpack" loading="lazy">
+                <h2>Backpack</h2>
+                <p class="description">A practical bag for school and travel.</p>
+                <p class="price">650</p>
+                <button onclick="addToCart('Backpack',650)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&auto=format&fit=crop" alt="Sneakers" loading="lazy">
+                <h2>Sneakers</h2>
+                <p class="description">Comfortable shoes for everyday wear.</p>
+                <p class="price">1,500</p>
+                <button onclick="addToCart('Sneakers',1500)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500&auto=format&fit=crop" alt="Sunglasses" loading="lazy">
+                <h2>Sunglasses</h2>
+                <p class="description">A fashionable accessory for sunny days.</p>
+                <p class="price">350</p>
+                <button onclick="addToCart('Sunglasses',350)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500&auto=format&fit=crop" alt="Smartphone" loading="lazy">
+                <h2>Smartphone</h2>
+                <p class="description">Stay connected wherever you go.</p>
+                <p class="price">6,500</p>
+                <button onclick="addToCart('Smartphone',6500)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&auto=format&fit=crop" alt="Water Bottle" loading="lazy">
+                <h2>Water Bottle</h2>
+                <p class="description">A reusable bottle for daily hydration.</p>
+                <p class="price">250</p>
+                <button onclick="addToCart('Water Bottle',250)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1547949003-9792a18a2601?w=500&auto=format&fit=crop" alt="Travel Bag" loading="lazy">
+                <h2>Travel Bag</h2>
+                <p class="description">Carry your essentials on every trip.</p>
+                <p class="price">950</p>
+                <button onclick="addToCart('Travel Bag',950)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=500&auto=format&fit=crop" alt="Perfume" loading="lazy">
+                <h2>Perfume</h2>
+                <p class="description">A fresh fragrance for any occasion.</p>
+                <p class="price">550</p>
+                <button onclick="addToCart('Perfume',550)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&auto=format&fit=crop" alt="Keyboard" loading="lazy">
+                <h2>Keyboard</h2>
+                <p class="description">A useful keyboard for work and gaming.</p>
+                <p class="price">750</p>
+                <button onclick="addToCart('Keyboard',750)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?w=500&auto=format&fit=crop" alt="Handbag" loading="lazy">
+                <h2>Handbag</h2>
+                <p class="description">An elegant bag for daily essentials.</p>
+                <p class="price">1,100</p>
+                <button onclick="addToCart('Handbag',1100)">Add to Cart</button>
+            </div>
+
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=500&auto=format&fit=crop" alt="Digital Camera" loading="lazy">
+                <h2>Digital Camera</h2>
+                <p class="description">Capture your favorite memories.</p>
+                <p class="price">4,500</p>
+                <button onclick="addToCart('Digital Camera',4500)">Add to Cart</button>
+            </div>
+
+        </div>
+    </section>
+
+    <nav class="bottom-nav">
+        <a href="homepage.html">HOMEPAGE</a>
+        <a href="about.html">ABOUT</a>
+        <a href="product.html" class="active">PRODUCT</a>
+        <a href="contact.html">CONTACT</a>
+        <a href="filmviewing.html">FILM VIEWING</a>
+       <a href="loginform.html" class="logout">LOGOUT</a>
+    </nav>
+
+    <script>
+        let cartCount = 0;
+        let cartTotal = 0;
+
+        function addToCart(name, price) {
+            cartCount++;
+            cartTotal += price;
+
+            document.getElementById("cartCount").textContent = cartCount;
+
+            alert(
+                name + " added to your cart!\n\n" +
+                "Items in cart: " + cartCount + "\n" +
+                "Cart total: ?" +
+                cartTotal.toLocaleString("en-PH")
+            );
+        }
+    </script>
+
+</body>
+</html>
